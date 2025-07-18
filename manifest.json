@@ -1,0 +1,37 @@
+<h3>manifest.json</h3>
+<p>We need to add permissions for the background script and the Gemini API endpoint.</p>
+<pre><code class="language-json">
+{
+  "manifest_version": 3,
+  "name": "AI Code Assistant",
+  "version": "2.0",
+  "description": "Copy, explain, and interact with code blocks on any webpage using AI.",
+  "permissions": [
+    "storage",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["&lt;all_urls&gt;"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/icon-48.png"
+    }
+  },
+  "icons": {
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
+</code></pre>
