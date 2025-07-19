@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('save').addEventListener('click', () => {
-        const apiKey = apiKeyInput.value;
+        const apiKey = apiKeyInput.value.trim();
         if (!apiKey) {
-            statusDiv.textContent = 'Please enter a key.';
+            statusDiv.textContent = 'Please enter an API key';
             statusDiv.style.color = 'red';
             return;
         }
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             statusDiv.textContent = 'API Key saved!';
             statusDiv.style.color = 'green';
             apiKeyInput.value = '';
+            apiKeyInput.placeholder = "API Key is set";
         });
     });
 });

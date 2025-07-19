@@ -1,9 +1,3 @@
-<h3>3. content.js</h3>
-<p>This script runs on webpages to add the "Copy" and "Explain" buttons.</p>
-<pre><code class="language-javascript">
-// content.js
-
-// Find all <pre> elements on the page.
 const codeBlocks = document.querySelectorAll('pre');
 
 // Loop through each found code block.
@@ -75,7 +69,6 @@ codeBlocks.forEach(block => {
         });
     });
 
-    // Append buttons to the container, and the container to the block.
     actionsContainer.appendChild(copyButton);
     actionsContainer.appendChild(explainButton);
     block.appendChild(actionsContainer);
@@ -124,4 +117,4 @@ function showModal(message) {
     modal.querySelector('button').onclick = () => modal.remove();
     document.body.appendChild(modal);
 }
-</code></pre>
+
